@@ -14,13 +14,17 @@ public class BinaryConverterRunner
 
     	System.out.println(steve.toBinary());
 
+		System.out.println(steve);
+
     	System.out.println((int)Math.pow(2,4));
 
-    	BinaryConverter jane = new BinaryConverter("11010011");
+    	BinaryConverter jane = new BinaryConverter("00000010");
 
     	System.out.println(jane.getBinary());
 
     	System.out.println(jane.toDecimal());
+
+		System.out.println(jane);
     }
 
 
