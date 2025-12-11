@@ -18,7 +18,7 @@ public class BinaryConverterRunner
 
     	System.out.println((int)Math.pow(2,4));
 
-    	BinaryConverter jane = new BinaryConverter("00000010");
+    	BinaryConverter jane = new BinaryConverter("11111111");
 
     	System.out.println(jane.getBinary());
 

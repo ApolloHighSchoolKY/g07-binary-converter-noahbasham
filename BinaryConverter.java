@@ -8,14 +8,14 @@ public class BinaryConverter
     public BinaryConverter()
     {
     	value=0;
-    	binaryValue="";
+    	binaryValue="0";
     }
 
     //Modified  Constructor(s)
     public BinaryConverter(int newValue)
     {
     	value=newValue;
-    	binaryValue="";
+    	binaryValue="0";
     }
 
     public BinaryConverter(String newBinary)
@@ -49,12 +49,13 @@ public class BinaryConverter
     {
     	//Convert the integer value to binary
         int x = value;
+        binaryValue="";
         //loop to find the binary value
-        for(int i=7; i>=0; i--)
+        for(int i=0; i<=7; i++)
         {
-            if(x - (int)Math.pow(2,i) >= 0)
+            if(x - (int)Math.pow(2,7-i) >= 0)
             {
-                x = x - (int)Math.pow(2,i);
+                x = x - (int)Math.pow(2,7-i);
                 binaryValue = binaryValue + "1";
             }
             else
@@ -67,24 +68,23 @@ public class BinaryConverter
     public int toDecimal()
     {
     	//Convert the binary value to decimal
-        String x = binaryValue;
+        int x = 0;
         //loop to find the decimal value
         for(int i=0; i<=7; i++)
         {
-            if(x.charAt(i)=='1')
-                value = value + (int)Math.pow(2,7-i);
-
+            if(binaryValue.charAt(i)=='1')
+                x = x + (int)Math.pow(2,7-i);
         }
 
-    	return value;
+    	return x;
     }
 
     public String toString()
     {
-        String str = "" + "The decimal value is " + getValue() + "\n"
-                   + "The binary value is " + getBinary();
+        return "" + "The decimal value of " + getBinary() + " is " + toDecimal() + "\n"
+                  + "The binary value of " + getValue() + " is " + toBinary() ;
 
-        return str;
+       
         
     }
 }
